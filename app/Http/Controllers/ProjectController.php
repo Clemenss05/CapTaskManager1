@@ -9,11 +9,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::with('owner')
-            ->withCount('tasks')
-            ->get();
-
-        return view('projects.index', compact('projects'));
+        return view('projects.index');
     }
 
     public function show(Project $project)
